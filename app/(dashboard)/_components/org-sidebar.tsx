@@ -48,6 +48,7 @@ const OrgSidebar = () => {
         <div className="space-y-1 w-full">
             <Link href="/">
             <Button><LayoutDashboard className="h-4 w-4 mr-2"></LayoutDashboard></Button>
+            Team Boards
             </Link>
         </div>
     </div>);
