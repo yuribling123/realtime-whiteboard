@@ -1,6 +1,12 @@
+import EmptyOrg from "./_components/empty-org";
+
 //sfc
 const DashBoardPage = () => {
-  return ( <div> Dashboard Root Page </div> );
+  return ( 
+  <div> 
+    <EmptyOrg></EmptyOrg>
+
+  </div> );
 }
  
 export default DashBoardPage;
