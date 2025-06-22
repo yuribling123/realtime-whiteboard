@@ -1,4 +1,7 @@
-import { Dialog } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { CreateOrganization } from "@clerk/nextjs";
+import { DialogContent } from "@radix-ui/react-dialog";
 import Image from "next/image";
 const EmptyOrg = () => {
     return ( 
@@ -12,6 +15,17 @@ const EmptyOrg = () => {
 
             <div className="mt-6">
                 <Dialog>
+                    <DialogTrigger asChild>
+                        <Button size="lg">
+                            create organization
+                        </Button>
+                    </DialogTrigger>
+
+                    <DialogContent className="p-0 bg-transparent border-none max-w-[480px]">
+
+                        <CreateOrganization></CreateOrganization>
+
+                    </DialogContent>
 
                 </Dialog>
 
