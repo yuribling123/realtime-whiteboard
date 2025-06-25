@@ -14,7 +14,7 @@ const EmptyOrg = () => {
             <p className="text-muted-foreground text-sm mt-3">create an organization to get started</p>
 
             <div className="mt-6">
-                <Dialog>
+                <Dialog> 
                     <DialogTrigger asChild>
                         <Button size="lg">
                             create organization
