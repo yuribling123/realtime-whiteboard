@@ -1,6 +1,7 @@
-"use client"
+'use client';
 import { useOrganization } from "@clerk/nextjs";
 import EmptyOrg from "./_components/empty-org";
+import { useSearchParams } from 'next/navigation';
 
 interface DashboardPageProps{
   searchParams: {
@@ -11,16 +12,14 @@ interface DashboardPageProps{
 }
 
 //sfc
-const DashBoardPage = ({
-  searchParams,
-
-}:DashboardPageProps) => {
+const DashBoardPage = () => {
   const {organization} = useOrganization();
+  const searchParams = useSearchParams();
 
 
   return ( 
   <div className="flex-1 h-[cal(100%-80px)] p-6"> 
-  {JSON.stringify(searchParams)}
+   {JSON.stringify(Object.fromEntries(searchParams.entries()))}
   {!organization ? (<EmptyOrg></EmptyOrg>): (<p>Board List!</p>)}
   
     
