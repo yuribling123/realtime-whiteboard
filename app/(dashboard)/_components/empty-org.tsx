@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { CreateOrganization } from "@clerk/nextjs";
 import { DialogContent } from "@radix-ui/react-dialog";
 import Image from "next/image";
@@ -21,7 +21,8 @@ const EmptyOrg = () => {
                         </Button>
                     </DialogTrigger>
 
-                    <DialogContent className="p-0 bg-transparent border-none max-w-[480px]">
+                    <DialogContent className="bg-transparent border-none max-w-[480px]">
+                        <DialogTitle></DialogTitle>
 
                         <CreateOrganization></CreateOrganization>
 
