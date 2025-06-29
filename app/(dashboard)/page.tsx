@@ -17,13 +17,16 @@ const DashBoardPage = () => {
   const { organization } = useOrganization();
   const searchParams = useSearchParams();
 
+  const search = searchParams.get("search") || undefined;
+  const favorites = searchParams.get("favorites") || undefined;
+
 
   return (
     <div className="flex-1 h-[cal(100%-80px)] p-6">
-      {JSON.stringify(Object.fromEntries(searchParams.entries()))}
+      {/* {JSON.stringify(Object.fromEntries(searchParams.entries()))} */}
       {!organization ? (<EmptyOrg></EmptyOrg>) : (<Boardlist orgId={organization.id} query={{
-        search: undefined,
-        favorites: undefined
+        search,
+        favorites
       }} ></Boardlist>)}
 
 
