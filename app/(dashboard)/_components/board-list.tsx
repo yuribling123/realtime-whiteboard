@@ -21,6 +21,23 @@ const Boardlist = (
             </div>
         )
     }
+    if (!data.length && query.favorites){
+        return(
+            <div>
+                No Favorites
+            </div>
+        )
+    }
+
+    if (!data.length ){
+        return(
+            <div>
+                No boards at all  
+            </div>
+        )
+    }
+
+    
     return (
         <div>
             <div>Org ID: {orgId}</div>
