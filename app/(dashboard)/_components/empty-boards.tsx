@@ -6,6 +6,7 @@ import {api} from "@/convex/_generated/api"
 import Image from "next/image";
 import { useOrganization } from "@clerk/nextjs";
 import { useApiMutation } from "@/hooks/use-api-mutation";
+import { toast } from "sonner"
 
 const EmptyBoards = () => {
 
@@ -22,6 +23,9 @@ const EmptyBoards = () => {
 
             }
         )
+        .then((id) =>{toast.success("Board Create")} )
+        .catch(()=>{toast.error("Failed to Create Board");
+        })
     }
     return ( 
 
