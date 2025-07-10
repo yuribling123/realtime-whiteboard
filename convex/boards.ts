@@ -5,7 +5,7 @@ import {v} from "convex/values"
 export const get = query(
     {
         args:{
-
+            orgId: v.id("organizations"),
         },
         handler: async (ctx,args) =>{
             const identity = await ctx.auth.getUserIdentity();
@@ -14,11 +14,11 @@ export const get = query(
                 throw new Error ("unaurhorized")
             }
 
-            // const boards = await ctx.db.query("boards").withIndex("by_org",(q)=>q.eq("orgId",args.orgId))
-            // .order("desc")
-            // .collect()
+            const boards = await ctx.db.query("boards").withIndex("by_org",(q)=>q.eq("orgId",args.orgId))
+            .order("desc")
+            .collect()
 
-            // return boards
+            return boards
             
         }
     }
