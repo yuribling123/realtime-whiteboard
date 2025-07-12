@@ -19,8 +19,10 @@ interface BoardListProps {
 
 
 const Boardlist = (
-    { orgId, query }: BoardListProps
+    { orgId , query }: BoardListProps
+
 ) => {
+
         const data=[useQuery(api.boards.get, {orgId}) ]//todo : change to api calls 
 
         if(data == undefined) {
@@ -53,7 +55,9 @@ const Boardlist = (
     
     return (
         <div>
-        {JSON.stringify(data)}
+        <h2 className="text-3xl">
+                {query.favorites ? "favourite board" :"Team board"}
+        </h2>
         </div>
 
     );

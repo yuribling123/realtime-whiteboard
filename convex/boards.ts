@@ -5,7 +5,7 @@ import {v} from "convex/values"
 export const get = query(
     {
         args:{
-            orgId: v.id("organizations"),
+             orgId: v.string()
         },
         handler: async (ctx,args) =>{
             const identity = await ctx.auth.getUserIdentity();
