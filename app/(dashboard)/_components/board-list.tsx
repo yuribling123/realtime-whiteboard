@@ -4,8 +4,11 @@ import EmptyBoards from "./empty-boards"
 import EmptyFavorites from "./empty-favorites"
 import EmptySearch from "./empty-search"
 import { useQuery } from "convex/react"
+import { api } from "@/convex/_generated/api"
+import { Id } from "@/convex/_generated/dataModel";
 
 interface BoardListProps {
+
     orgId: string
     query: {
         search?: string
@@ -18,7 +21,18 @@ interface BoardListProps {
 const Boardlist = (
     { orgId, query }: BoardListProps
 ) => {
-    const data=[] //todo : change to api calls 
+        const data=[useQuery(api.boards.get, {orgId}) ]//todo : change to api calls 
+
+        if(data == undefined) {
+            return ( 
+
+            <div>
+                Loading
+            </div>)
+           
+        }
+
+
     if (!data.length && query.search){
         return(
           <EmptySearch></EmptySearch>
@@ -39,9 +53,7 @@ const Boardlist = (
     
     return (
         <div>
-            <div>Org ID: {orgId}</div>
-            <div>Search Query: {query.search || 'None'}</div>
-            <div>Favorites: {query.favorites || 'None'}</div>
+        {JSON.stringify(data)}
         </div>
 
     );
