@@ -3,6 +3,7 @@
 import EmptyBoards from "./empty-boards"
 import EmptyFavorites from "./empty-favorites"
 import EmptySearch from "./empty-search"
+import { useQuery } from "convex/react"
 
 interface BoardListProps {
     orgId: string
