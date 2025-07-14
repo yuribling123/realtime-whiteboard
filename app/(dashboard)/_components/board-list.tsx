@@ -61,16 +61,15 @@ const Boardlist = (
                 {query.favorites ? "favourite board" :"Team board"}
         </h2>
 
-        <div className=" grid grid-cols-1 sm: grid-flow-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-8 pb-10">
+        {/* <div className=" grid grid-cols-1 sm: grid-flow-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-8 pb-10">
             {data?.map(
                 (board) => ( 
                 <BoardCard
-                key = {board._id}
-                id = {board._id}
-                />
+                        key={board?._id}
+                        id={data._id} title={""} authorName={""} authorId={""} createdAt={0} imageUrl={""} orgId={""} isFavorite={false}                />
             )
             )}
-        </div>
+        </div> */}
         </div>
 
     );

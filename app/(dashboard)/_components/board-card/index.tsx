@@ -11,7 +11,18 @@ interface BoardCardProps{
     isFavorite: boolean
 
 }
-const BoardCard = () => {
+const BoardCard = (
+    {id,
+     title,
+     authorId,
+     authorName,
+     createdAt,
+     imageUrl,
+     orgId,
+     isFavorite,
+     
+    }:BoardCardProps
+) => {
     return ( 
         <div> Board Card </div>
   
