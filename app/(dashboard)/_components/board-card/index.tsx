@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
  
 interface BoardCardProps{
     id:string;
@@ -28,7 +29,11 @@ const BoardCard = (
         <Link href={`/board/${id}`}>
             <div className="group aspect-[100/127] border rounded-lg flex flex-col justify-between overflow-hidden">
 
-                <div className="relative flex-1 bg-amber-50"> <p>id:{id} </p> <p>author:{authorName} </p> </div>
+                <div className="relative flex-1 bg-amber-50"> 
+                    <Image src={imageUrl} alt="doodle" fill className="object-fit"></Image>
+
+                    <p className="pt-5">{imageUrl}</p>
+                </div>
 
             </div>
         
