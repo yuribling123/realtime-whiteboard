@@ -12,8 +12,19 @@ interface FooterProps {
     disabled: boolean;
 }
 
-const Footer = () => {
-    return ( <div></div> );
+const Footer = (
+    { title, authorLabel, createdAtLabel, isFavorite, onClick, disabled }: FooterProps
+
+
+) => {
+    return ( 
+    <div className="relative p-3 bg-white">
+        <p className="text-[13px] truncate max-w-[calc(100%-20px)]"> {title} </p>
+        <p className="opoacity-0 group-hover:opacity-100 transition-opacity text-[11px] text-muted-foreground truncate"> 
+            {authorLabel},{createdAtLabel}
+        </p>
+    </div> 
+    );
 }
  
 export default Footer;

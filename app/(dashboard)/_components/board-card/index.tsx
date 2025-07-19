@@ -50,7 +50,14 @@ const BoardCard = (
 
                 </div>
 
-                <Footer></Footer>
+                <Footer
+                    title={title}
+                    authorLabel={authorLabel}
+                    createdAtLabel={createdAtLabel}
+                    isFavorite={isFavorite}
+                    onClick={() => {}}
+                    disabled={false}
+                />
 
             </div>
         
