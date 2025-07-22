@@ -20,10 +20,10 @@ const EmptyBoards = () => {
             {   
                 title:"Untitled",
                 orgId:organization.id
-
+        
             }
         )
-        .then((id) =>{toast.success("Board Create")} )
+        .then((id) =>{toast.success("Board Create:" + id )} )
         .catch(()=>{toast.error("Failed to Create Board");
         })
     }

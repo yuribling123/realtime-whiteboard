@@ -1,7 +1,13 @@
 import { defineComponent } from "convex/server"
 import {mutation} from "./_generated/server"
 import {v} from "convex/values"
-const images = ["public/globe.svg"]
+const images =[ 
+  "/placeholders/cake-svgrepo-com.svg",
+  "/placeholders/cheese-svgrepo-com.svg",
+  "/placeholders/donut-svgrepo-com.svg",
+  "/placeholders/egg-svgrepo-com.svg",
+  "/placeholders/lemon-svgrepo-com.svg",
+  "/placeholders/luke-svgrepo-com.svg"]
 
 export const create = mutation(
     {
@@ -15,7 +21,7 @@ export const create = mutation(
                 throw new Error("unauthorized")
             }
             const randomImage = images[Math.floor(Math.random()*images.length)]
-            console.log(randomImage,"TEST")
+
             const boards = await ctx.db.insert("boards",{title:args.title,orgId:args.orgId,authorId:identity.subject,authorName:identity.name!,imageUrl:randomImage})
             return boards;
         }

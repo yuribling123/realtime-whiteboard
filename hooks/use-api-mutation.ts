@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useMutation } from "convex/react";
-import { mutation } from "@/convex/_generated/server";
+
+// This hook runs an API call while tracking if it's loading (pending) and handles errors cleanly.
 
 export const useApiMutation =(mutationFunction: any) =>{
     const [pending,setPending] = useState(false);

@@ -24,7 +24,8 @@ export const Hint = ({
             {children}
           </TooltipTrigger>
           <TooltipContent
-            className="text-white bg-black border-black"
+           className="bg-white/60 text-sm font-normal  text-black border border-zinc-300 rounded-xl shadow-lg px-3 py-2"
+
             side={side}
             align={align}
             sideOffset={sideOffset}
