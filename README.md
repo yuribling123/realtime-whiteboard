@@ -49,3 +49,9 @@ use clerk for authentication
 6.20
 
 ![alt text](image.png)
+
+
+
+7.24
+
+![alt text](image-1.png)
