@@ -8,7 +8,7 @@ import Footer from "./footer";
 import {Skeleton} from "@/components/ui/skeleton";
 import Actions from "../action";
 import { MoreHorizontal } from "lucide-react";
- 
+ // comment
 interface BoardCardProps{
     id:string;
     title:string;
