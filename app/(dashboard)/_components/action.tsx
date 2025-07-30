@@ -21,7 +21,7 @@ const Actions = (
             <DropdownMenuTrigger asChild>
                 {children}
             </DropdownMenuTrigger>
-            <DropdownMenuContent onClick={(e)=>e.stopPropagation()} side={side}  sideOffset={sideoffset} className="w-60">
+            <DropdownMenuContent onClick={(e)=>e.stopPropagation()} side={side}  sideOffset={sideoffset} className="w-60 z-50  bg-white rounded-md">
 
                 <DropdownMenuItem className="p-3 cursor-pointer ">
                     <Link2 className="h-4 w-4 mr-2"/>
