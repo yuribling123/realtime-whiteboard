@@ -29,3 +29,13 @@ export const create = mutation(
     }
 )
 
+export const remove = mutation({
+  args: {
+    id: v.id("boards"),
+  },
+  handler: async (ctx, { id }) => {
+    const identity = await ctx.auth.getUserIdentity();
+    // TODO: perform deletion logic with `id` and `identity`
+    return identity;               // or whatever you want to return
+  },
+});  
