@@ -1,9 +1,12 @@
 "use client"
 
+import { useApiMutation } from "@/hooks/use-api-mutation";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuContentProps, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { Link2 } from "lucide-react";
+import { Link2, Trash2 } from "lucide-react";
 import { Children } from "react";
 import { toast } from "sonner";
+// Import your api object here
+import { api } from "@/convex/_generated/api";
 
 interface ActionProps {
     children: React.ReactNode;
@@ -14,12 +17,23 @@ interface ActionProps {
 }
 
 const Actions = (
+    
     { children, side, sideoffset, id, title }: ActionProps
 
 ) => {
+    const  {mutate,pending} = useApiMutation(api.board.remove)
     const onCopyLink = () => {
+
         navigator.clipboard.writeText(`${window.location.origin}/board/${id}`)
         .then(() =>{toast.success("Board link copied to clipboard")})
+    }
+
+    const onDelete = () => {
+        mutate({id}).then(()=>{
+            toast.success("Board deleted successfully")
+        }).catch((e)=>{
+            toast.error(`Failed to delete board: ${e.message}`)
+        })
     }
 
 
@@ -33,6 +47,11 @@ const Actions = (
                 <DropdownMenuItem className="cursor-pointer " onClick={onCopyLink}>
                     <Link2 className="h-4 w-4 mr-2"/>
                      Copy Board Link
+                </DropdownMenuItem>
+
+                <DropdownMenuItem className="cursor-pointer " onClick={onDelete} disabled={pending}>
+                    <Trash2 className="h-4 w-4 mr-2"/>
+                     Delete
                 </DropdownMenuItem>
 
             </DropdownMenuContent>

@@ -36,6 +36,10 @@ export const remove = mutation({
   handler: async (ctx, { id }) => {
     const identity = await ctx.auth.getUserIdentity();
     // TODO: perform deletion logic with `id` and `identity`
-    return identity;               // or whatever you want to return
+    if (!identity) {
+      throw new Error("unauthorized");
+    }
+    await ctx.db.delete(id);
+    // or whatever you want to return
   },
 });  
