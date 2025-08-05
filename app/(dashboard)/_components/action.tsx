@@ -44,14 +44,14 @@ const Actions = (
             </DropdownMenuTrigger>
             <DropdownMenuContent onClick={(e)=>{e.preventDefault();e.stopPropagation()}} side={side}  sideOffset={sideoffset} className="w-60 z-50  bg-white rounded-md">
 
-                <DropdownMenuItem className="cursor-pointer " onClick={onCopyLink}>
-                    <Link2 className="h-4 w-4 mr-2"/>
-                     Copy Board Link
+                <DropdownMenuItem className="flex items-center cursor-pointer " onClick={onCopyLink}>
+                    <Link2 className="h-4 w-4 mr-2 ml-2"/>
+                    Copy Board Link
                 </DropdownMenuItem>
 
-                <DropdownMenuItem className="cursor-pointer " onClick={onDelete} disabled={pending}>
-                    <Trash2 className="h-4 w-4 mr-2"/>
-                     Delete
+                <DropdownMenuItem className="flex items-center cursor-pointer " onClick={onDelete} disabled={pending}>
+                    <Trash2 className="h-4 w-4 mr-2 ml-2"/>
+                    Delete
                 </DropdownMenuItem>
 
             </DropdownMenuContent>
