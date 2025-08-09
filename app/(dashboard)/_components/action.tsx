@@ -2,7 +2,7 @@
 
 import { useApiMutation } from "@/hooks/use-api-mutation";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuContentProps, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import { Link2, Trash2 } from "lucide-react";
+import { Ghost, Link2, Trash2 } from "lucide-react";
 import { Children } from "react";
 import { toast } from "sonner";
 // Import your api object here
@@ -52,7 +52,7 @@ const Actions = (
                 </DropdownMenuItem>
 
                 <ConfirmModal header="Delete Board" description="This will delete board and all of its contents." disabled={pending} onConfirm={onDelete}>
-                <Button>
+                <Button variant="ghost" className="p-3 cursor-pointer w-full test-sm justify-start">
                     <Trash2 className="h-4 w-4 mr-2 ml-2"/>
                     Delete
                 </Button>
