@@ -7,6 +7,8 @@ import { Children } from "react";
 import { toast } from "sonner";
 // Import your api object here
 import { api } from "@/convex/_generated/api";
+import ConfirmModal from "@/components/confirm-modal";
+import { Button } from "@/components/ui/button";
 //
 interface ActionProps {
     children: React.ReactNode;
@@ -49,10 +51,12 @@ const Actions = (
                     Copy Board Link
                 </DropdownMenuItem>
 
-                <DropdownMenuItem className="flex items-center cursor-pointer " onClick={onDelete} disabled={pending}>
+                <ConfirmModal header="Delete Board" description="This will delete board and all of its contents." disabled={pending} onConfirm={onDelete}>
+                <Button>
                     <Trash2 className="h-4 w-4 mr-2 ml-2"/>
                     Delete
-                </DropdownMenuItem>
+                </Button>
+                </ConfirmModal>
 
             </DropdownMenuContent>
         </DropdownMenu>
