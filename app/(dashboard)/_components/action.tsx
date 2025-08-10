@@ -46,16 +46,16 @@ const Actions = (
             </DropdownMenuTrigger>
             <DropdownMenuContent onClick={(e)=>{e.preventDefault();e.stopPropagation()}} side={side}  sideOffset={sideoffset} className="w-60 z-50  bg-white rounded-md">
 
-                <DropdownMenuItem className="flex items-center p-3 w-full text-sm font-normal" onClick={onCopyLink}>
+                <DropdownMenuItem className=" flex items-center p-3 w-full text-sm font-normal focus:outline-none " onClick={onCopyLink}>
                     <Link2 className="h-4 w-4 mr-2 ml-2"/>
                     Copy Board Link
                 </DropdownMenuItem>
 
                 <ConfirmModal header="Delete Board" description="This will delete board and all of its contents." disabled={pending} onConfirm={onDelete}>
-                <Button variant="ghost" className="flex items-center  p-3 w-full text-sm font-normal">
+                <div  className="focus-visible:ring-2 flex items-center  p-3 w-full text-sm font-normal">
                     <Trash2 className="h-4 w-4 mr-2 ml-2"/>
                     Delete
-                </Button>
+                </div>
                 
                 </ConfirmModal>
 
