@@ -9,4 +9,11 @@ const defaultValues = {id:"",title:""}
 }
 
 
-export const useRenameModal = create<RenameModalStore>()
+export const useRenameModal = create<RenameModalStore>(
+    (set) => ({
+        isOpen: false,
+        initialValues: defaultValues,
+        onOpen: (id, title) => set({ isOpen: true, initialValues: { id, title } }),
+        onClose: () => set({ isOpen: false, initialValues: defaultValues }),
+    })
+)
