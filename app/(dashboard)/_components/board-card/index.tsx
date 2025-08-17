@@ -6,7 +6,7 @@ import Link from "next/link";
 import Overlay from "./overlay";
 import Footer from "./footer";
 import {Skeleton} from "@/components/ui/skeleton";
-import Actions from "../action";
+import Actions from "@/components/actions";
 import { MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
  // comment
